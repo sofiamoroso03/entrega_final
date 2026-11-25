@@ -25,8 +25,8 @@ app.get("/api/health", (request, response) => {
 
 app.use("/api/auth", auth_router);
 app.use("/api/users", user_router);
+app.use("/api/routines", routine_router);
 app.use("/api/sessions", session_router);
-
 
 app.use((request, response) => {
     return response.status(404).json({
@@ -45,4 +45,3 @@ if (!process.env.VERCEL) {
 }
 
 export default app;
-
